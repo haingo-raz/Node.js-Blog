@@ -53,7 +53,6 @@ function uploadProfilePic(){
         }
         
     };
-
     //Send off message to upload file
     httpReq.open('POST', '/uploadProfilePic'); 
     httpReq.send(formData); //send data to the server

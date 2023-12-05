@@ -1,4 +1,3 @@
-
 *{
     margin:0px;
     padding:0px;
@@ -52,7 +51,6 @@ nav {
     position:absolute;
     right:20px;
 }
-
 
 /*login and sign up form*/
 .login-form, .signup-form{
@@ -113,7 +111,6 @@ form input[type="button"]:hover{
     padding:0px 10px;
 }
 
-
 /*Style feedback*/
 #loginFeedback, #signInFeedback, #updateFeedback{
     color:rgb(83, 83, 83);
@@ -152,7 +149,6 @@ form input[type="button"]:hover{
     padding-left:30px;
 }
 
-
 .bnr_content h2{
     font-size:35px;
     line-height:38px;
@@ -175,7 +171,6 @@ form input[type="button"]:hover{
     /*hide*/
     display:none;
 }
-
 
 /*Section two: reviews and rules*/
 .section_two{
@@ -244,7 +239,6 @@ form input[type="button"]:hover{
     border-radius:50%;
 }
 
-
 /*User information page*/
 .user-info{
     margin-top:50px;
@@ -277,7 +271,6 @@ form input[type="button"]:hover{
     padding:5px;
 }
 
-
 /*Search results section*/
 .searchResult{
     margin:20px;
@@ -288,7 +281,6 @@ form input[type="button"]:hover{
     text-decoration:underline;
 }
 
-
 /*Full post page option*/
 .searchContainer{
     height:100px;
@@ -296,7 +288,6 @@ form input[type="button"]:hover{
     margin:20px auto;
     position: relative;
     height:50px;
-    
 }
 
 .searchContainer input[type="text"]{ /*Search tool*/
@@ -315,7 +306,6 @@ form input[type="button"]:hover{
     background:grey;
     padding:7px 10px;
 }
-
 
 .full_post_container{
     margin:20px auto;
@@ -390,7 +380,6 @@ form input[type="button"]:hover{
     margin:20px 0px;
 }
 
-
 /*Creating a new post*/
 /*container*/
 .new_post{
@@ -428,7 +417,6 @@ form input[type="button"]:hover{
     padding:0px 5px;
     width:300px;
 }
-
 
 /*Choose file button*/
 .create_post input[type="file"]{
@@ -479,13 +467,3 @@ footer{
     text-align:center;
     line-height:30px;
 }
-
-
-
-
-
-
-
-
-
-

@@ -6,7 +6,6 @@ const imgElement = document.querySelector('#displayed_img');//get id
 
 //set src each of the element index of the images array
 function changeImg() {
-    
    imgElement.src = images[index];
    index > 1 ? index = 0 : index++;
 }
@@ -47,7 +46,6 @@ function showNewPass() {
     }
 }
 
-
 //Cancel a new post by deleting values inside the input fields
 function cancelPost(){
 
@@ -64,7 +62,4 @@ function cancelPost(){
         postFeedback.innerHTML = "";
         window.location.href = "/"; //bring to the homepage
     }, 5000);  
-
 } //end cancelPost()
-
-

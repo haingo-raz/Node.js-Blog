@@ -11,8 +11,6 @@ var signInForm = document.getElementById("signup-form"); //sign up form
 var searchBar = document.getElementById("searchContainer"); //search bar
 var searchResults = document.getElementById("searchResult"); //search results
 
-
-
 //Loading necessary sections as homepage
 function loadHomepage(){
 
@@ -34,14 +32,12 @@ function displaySignup(){
     loginForm.style.display = "none";//hide login
 }
 
-
 //show the login form
 function displayLogin(){
     loadHomepage();
     loginForm.style.display = "block";
     signInForm.style.display = "none";
 }
-
 
 //Display user information upon Profile click
 function displayProfile(){ 
@@ -50,7 +46,6 @@ function displayProfile(){
     if (sessionStorage.length == 0) {
         alert("You have to log in to view this page");      
     }
-
     else {
         infoSection.style.display = "block";
         picSection.style.display = "block";
@@ -68,13 +63,10 @@ function displayProfile(){
 
 //Display post creation upon click
 function displayCreatePost(){
-
     //No access to the page if the user is not logged in
     if (sessionStorage.length == 0) {
         alert("You have to log in to view this page");      
-    }
-    
-    else{
+    } else{
         createPostSection.style.display = "block";
         bannerSection.style.display = "none";
         section.style.display = "none";
@@ -89,13 +81,10 @@ function displayCreatePost(){
 
 //Display full post section
 function displayPosts(){
-
     //No access to the page if the user is not logged in
     if (sessionStorage.length == 0) {
         alert("You have to log in to view this page");      
-    }
-
-    else{
+    } else{
         PostSection.style.display = "block";
         searchBar.style.display = "block";
         searchResults.style.display = "block";
@@ -120,7 +109,6 @@ function getPosts() {
     request.open("GET", "/displayPost", true);
     //Send request to the server
     request.send(); 
-
 
     //Create event handler that specifies what should happen when server responds
     request.onload = () => {
@@ -157,12 +145,10 @@ function displayAllPosts(jsonPost) {
         htmlStr += '<h3>' + postArray[i].title + ', ' + postArray[i].country + '</h3>';      
         htmlStr += '<p>' + postArray[i].content + '</p>';
         htmlStr += '</div>';
-
     }
     
     //Add all div into the posts container
     document.getElementById("full_post_container").innerHTML = htmlStr;
-
 }
 
 
@@ -255,11 +241,8 @@ function updateUserInfo(){
     }
 } // end updateUserInfo()
 
-
-
 //call function to display user form
 displayUserForm();
-
 
 //publish a new post 
 function publishPost(){
@@ -364,7 +347,6 @@ function loadSearchResults(){
             keyword: keyword
         };
 
-
         //Send data to the server
         xhttp.open("POST", "/search", true);
         xhttp.setRequestHeader("Content-type", "application/json");
@@ -390,7 +372,6 @@ function loadSearchResults(){
         };
     }
 } //end loadSearchResults()
-
 
 //Display the posts that correspond to the user search
 function displaySearchedPosts(jsonPost) {
@@ -419,9 +400,3 @@ function displaySearchedPosts(jsonPost) {
     document.getElementById("searchResult").innerHTML = htmlStr;
 
 }//end displaySearchedPosts()
-
-
-    
-
-
-

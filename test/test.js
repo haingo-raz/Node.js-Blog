@@ -25,8 +25,6 @@ const connectionPool = mysql.createPool({
     debug: false
 });
 
-
-
 //Wrapper for all database tests
 describe('Database', () => {
 
@@ -272,12 +270,8 @@ describe('Database', () => {
 
 });
 
-
-
-
 //Wrapper for all web service tests
 describe('Web Service', () => {
-
     //Test of GET request sent to /displayPost
     describe('/GET displayPost', () => {
         it('should GET all the posts', (done) => {

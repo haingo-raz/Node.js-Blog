@@ -10,7 +10,6 @@ const connectionPool = mysql.createPool({
     debug: false
 });
 
-
 //Login 
 async function loginUser(user, response) {
     //SQL query for login
@@ -32,7 +31,6 @@ async function loginUser(user, response) {
 		});
 } //end loginUser()
 
-
 //register a new user 
 async function registerUser(newUser, response){
 
@@ -51,7 +49,6 @@ async function registerUser(newUser, response){
     }); //end connectionPool
 }
 
-
 //update user information
 async function updateUserInfo(user, response){
     //SQL query that will update the information of the user
@@ -69,8 +66,6 @@ async function updateUserInfo(user, response){
     });
 }
 
-
-
 //save post 
 async function savePostDetails(userDetails, response) {
 
@@ -78,8 +73,7 @@ async function savePostDetails(userDetails, response) {
 
 		//SQL query for new post 
 		let sql = "INSERT INTO posts(author, title, country, content, date, time) " +
-		"       VALUES ('" + userDetails.username + "', '" + userDetails.title + "', '" + userDetails.country + "', '" + userDetails.content + "', '" + userDetails.date + "', '" + userDetails.time + "')";
-		
+		"       VALUES ('" + userDetails.username + "', '" + userDetails.title + "', '" + userDetails.country + "', '" + userDetails.content + "', '" + userDetails.date + "', '" + userDetails.time + "')";	
 		
 		//Execute query and output results
 		connectionPool.query(sql, (error, result) => {
@@ -98,8 +92,6 @@ async function savePostDetails(userDetails, response) {
 		//client side response
 	}
 }
-
-
 
 //display post on the html page
 async function loadAllPosts(response){ //function to display all the posts from the posts table 
@@ -130,8 +122,6 @@ async function loadAllPosts(response){ //function to display all the posts from 
    }
 }
 
-
-
 //getting search results
 async function getSearchResults(userSearch, response) { 
 
@@ -152,7 +142,6 @@ async function getSearchResults(userSearch, response) {
 	try {
 	   //Execute promise and output result
 	   let allPosts = await selectPromise;
-
 	   response.send(JSON.stringify(allPosts)); //Server response to the client side
 
 	} catch (err) {
@@ -162,8 +151,6 @@ async function getSearchResults(userSearch, response) {
 	   //response.status(400).json(err);
 	}
 }
-
-
 
 //Export the functions
 module.exports.loginUser = loginUser;

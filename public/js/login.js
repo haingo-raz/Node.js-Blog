@@ -81,7 +81,6 @@ function loginUser() { //login on the client side
 //logout function
 function logOut() {
 
-
     //No access to the page if the user is not logged in
     if (sessionStorage.length == 0) {
         alert("You have to log in before logging out");      
@@ -101,6 +100,5 @@ function logOut() {
         xhttp.open("GET", "/logout", true); //'/auth' from node.js
         xhttp.setRequestHeader("Content-type", "application/json");
     }
-
 } //end logOut()
 

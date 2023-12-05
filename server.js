@@ -26,7 +26,6 @@ app.use(
     })
 );
 
-
 app.use(express.urlencoded({ extended: true }));
 
 //serve static files from the 'public' directory
@@ -44,9 +43,6 @@ app.post('/updateuser', updateUser); //update a user information
 app.post('/uploadProfilePic', uploadProfilePic); //update a user information
 app.post('/newpost', savePost); //Add a new post
 app.post('/search', searchPost); //Handle searching
-
-
-
 
 //Render the index page
 function loadHome(request, response) {
@@ -72,7 +68,6 @@ async function login(request, response) {
 	}
 }
 
-
 //Registering a new user
 async function register(request, response) {
 
@@ -92,7 +87,6 @@ async function register(request, response) {
 } //end register
 
 
-
 // performs update credentials of registered users
 async function updateUser(request, response) { 
 
@@ -108,8 +102,6 @@ async function updateUser(request, response) {
 	}//end if
 }
 
-
-
 async function savePost(request, response) {
 
 	// Receive data from the client side
@@ -121,7 +113,6 @@ async function savePost(request, response) {
 	db.savePostDetails(userDetails, response);
 }
 
-
 // function that displays the posts on the client page
 async function displayPost(request, response) {
 	
@@ -129,7 +120,6 @@ async function displayPost(request, response) {
 	db.loadAllPosts(response);
 }
     
-
 //Searching a keyword within a post
 async function searchPost(request, response) {
    
@@ -138,8 +128,6 @@ async function searchPost(request, response) {
 
     db.getSearchResults(userSearch, response); //call the function that will get all matching results with keywords
 }
-
-
 
 function uploadProfilePic(request, response){ //upload file for the profile picture
 
@@ -152,7 +140,6 @@ function uploadProfilePic(request, response){ //upload file for the profile pict
     let myFile= request.files.myFile; 
 
 	console.log(myFile);
-
 
     /* Use the mv() method to place the file in the folder called 'uploads' on the server.*/
     myFile.mv('./uploads/' + myFile.name, function(err) {
@@ -172,11 +159,8 @@ function uploadProfilePic(request, response){ //upload file for the profile pict
   });
 }
 
-
-
 //Export server for testing
 module.exports = app;
-
 
 //listen on the selected port
 app.listen(8080);

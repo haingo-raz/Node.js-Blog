@@ -33,5 +33,5 @@ A blog developed with Node.js whereby users can register, login, create a post a
 - Open a web browser and go to http://localhost:8080 (or your chosen port) to see the running application.
 
 ## UI <a name="ui"></a>
-![Node.js blog](https://raw.githubusercontent.com/haingo-raz/Blog-Node.js/main/UI/Blog.png)
+![Node.js blog](https://raw.githubusercontent.com/haingo-raz/Node.js-blog/main/UI/Blog.png)
 
