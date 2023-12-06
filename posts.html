@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hang out here - Share your experience</title>
+    <link rel="stylesheet" href="./css/index.css"><!--css link-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <!--Navigation bar no logged in user-->
+    <div id="user_nav" class="user_nav">
+        <nav class="public_nav" >
+            <div>
+                <h1 class="logo"><a href="/posts">Hang out here</a></h1>
+            </div>
+
+            <div class="nav-posts">
+                <a href="/posts">Posts</a><span> | </span>
+                <a href="/create" id="newPostLink">Create a post</a>
+            </div>
+
+            <div class="nav-right">
+                
+                <a id="profile" href="/profile">Profile</a><span> | </span>
+                <a onclick="logOut()">Log out</a>
+            </div>
+        </nav>
+    </div>
+
+    <hr class="nav_line"><!--Separator-->
+    <!--End of section 2 in the landing page-->
+
+    <!--Search bar-->
+    <div class="searchContainer" id="searchContainer">
+        <form>
+            <input type="text" id="searchInput" name="searchInput" placeholder="Seach a keyword or author...">
+            <button type="button" onclick="loadSearchResults()"><i class="fa fa-search"></i></button>
+        </form>
+    </div>
+    <!--Search bar-->
+
+    <!--Container for the search results-->
+    <div id="searchResult" class="searchResult">
+
+    </div>
+
+    <!--All posts section-->
+    <div class="full_post_container" id="full_post_container">
+
+        <!--Posts are generated here as they are created-->
+
+    </div>
+    <!--All posts section-->
+
+    <!--Link to js -->
+    <script src="./js/client.js" async></script>
+    <script src="./js/login.js" async></script>
+    <script src="./js/register.js" async></script>
+    <script src="./js/display.js" async></script>
+    <script src="./js/upload.js" async></script>
+    <script src='https://kit.fontawesome.com/a076d05399.js' crossorigin='anonymous'></script>
+
+    <footer>
+        <h2>Hang out here</h2>
+        <p>Explore the world</p>
+        <p>haingo-raz &#169; 2022</p>
+    </footer>
+    
+</body>
+</html>

@@ -4,9 +4,9 @@ const mysql = require('mysql');
 const connectionPool = mysql.createPool({
     connectionLimit: 1,
     host: "localhost",
-    user: "user1",
-    password: "pass123",
-    database: "Coursework3",
+    user: "root",
+    password: "",
+    database: "coursework3",
     debug: false
 });
 
@@ -19,14 +19,15 @@ async function loginUser(user, response) {
 	connectionPool.query(sql, (err, result) => {
 		if (err) {//Check for errors
 			console.error("Error executing query: " + JSON.stringify(err));
-			response.send("error");
+			response.status(500).json({ error: 'Internal server error' });
+			return;
 		} if (result.length > 0) { //result found
 			//succesful login
-			response.send('Login succesful'); //server response 
+			response.send('Login succesful');
+			// response.redirect('/posts')
 		} else { //No matching result
                 //if the password or username is invalid, send error status
-				response.status(400).json("{Error: Invalid username and / or password!}");
-				return;
+				response.status(401).json({ error: 'Invalid username and/or password' });
 			}
 		});
 } //end loginUser()
@@ -113,13 +114,10 @@ async function loadAllPosts(response){ //function to display all the posts from 
    try {
        //Execute promise and output result
        let allPosts = await selectPromise;
-
        response.send(JSON.stringify(allPosts)); //Server response to the client side
-
-   } catch (err) {
-
+   	} catch (err) {
        throw err;
-   }
+   	}	
 }
 
 //getting search results

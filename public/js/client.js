@@ -60,6 +60,6 @@ function cancelPost(){
 
     setTimeout(() => {
         postFeedback.innerHTML = "";
-        window.location.href = "/"; //bring to the homepage
+        window.location.replace("/create");
     }, 5000);  
 } //end cancelPost()

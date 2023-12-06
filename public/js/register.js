@@ -35,15 +35,13 @@ function registerUser(){
 
         //Set up function that is called when reply received from server.js
         xhttp.onreadystatechange = function() {
-
-
+            
             if (this.readyState == 4 && this.status == 200) {
 
                 //Display successful message
                 document.getElementById('signInFeedback').innerHTML = "Welcome " + username + ". You have registered successfully!";
                 setTimeout(() => {
                     document.getElementById('signInFeedback').innerHTML = "";
-                    //window.location.href = "/";
                 }, 5000);
 
             } else {

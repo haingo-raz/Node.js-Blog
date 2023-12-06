@@ -31,9 +31,12 @@ app.use(express.urlencoded({ extended: true }));
 //serve static files from the 'public' directory
 app.use(express.static(path.join(__dirname, 'public'))); // css and js
 
-
 //Set up application to handle GET requests 
 app.get('/', loadHome);//Load the html page
+app.get('/profile', loadProfile);
+app.get('/posts', loadPosts);
+app.get('/create', loadCreatePosts);
+
 app.get('/displayPost', displayPost); //Display posts on the front-end
 
 //Set up application to handle POST requests
@@ -46,8 +49,19 @@ app.post('/search', searchPost); //Handle searching
 
 //Render the index page
 function loadHome(request, response) {
-	// Render the html page
 	response.sendFile(path.join(__dirname + '/index.html'));
+}
+
+function loadProfile(request, response) {
+	response.sendFile(path.join(__dirname + '/profile.html'));
+}
+
+function loadPosts(request, response) {
+	response.sendFile(path.join(__dirname + '/posts.html'));
+}
+
+function loadCreatePosts(request, response) {
+	response.sendFile(path.join(__dirname + '/createPost.html'));
 }
 
 
@@ -59,12 +73,10 @@ async function login(request, response) {
 
 	// Ensure the input fields exists and are not empty before proceeding
 	if (user.username && user.password) {
-
 		//call the loginUser function in database.js
 		db.loginUser(user, response, request);
-
 	} else { //no value entered
-		//client side response
+		response.status(400).json({ error: 'Username and password are required' });
 	}
 }
 
@@ -115,7 +127,6 @@ async function savePost(request, response) {
 
 // function that displays the posts on the client page
 async function displayPost(request, response) {
-	
 	//call function in database.js
 	db.loadAllPosts(response);
 }

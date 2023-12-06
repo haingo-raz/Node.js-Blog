@@ -11,97 +11,21 @@ var signInForm = document.getElementById("signup-form"); //sign up form
 var searchBar = document.getElementById("searchContainer"); //search bar
 var searchResults = document.getElementById("searchResult"); //search results
 
-//Loading necessary sections as homepage
-function loadHomepage(){
-
-    publicnav.style.display = "block";
-    createPostSection.style.display = "none";
-    PostSection.style.display = "none";
-    infoSection.style.display = "none";
-    picSection.style.display = "none";
-    searchBar.style.display = "none";
-    searchResults.style.display = "none";
-}
-
-loadHomepage(); //load the homepage
-
 //show the sign up form
 function displaySignup(){
-    loadHomepage();
     signInForm.style.display = "block";
-    loginForm.style.display = "none";//hide login
+    loginForm.style.display = "none";o
 }
 
 //show the login form
 function displayLogin(){
-    loadHomepage();
     loginForm.style.display = "block";
     signInForm.style.display = "none";
 }
 
-//Display user information upon Profile click
-function displayProfile(){ 
-
-    //No access to the page if the user is not logged in
-    if (sessionStorage.length == 0) {
-        alert("You have to log in to view this page");      
-    }
-    else {
-        infoSection.style.display = "block";
-        picSection.style.display = "block";
-        bannerSection.style.display = "none";
-        section.style.display = "none";
-        createPostSection.style.display = "none";
-        PostSection.style.display = "none";  
-        loginForm.style.display = "none";
-        signInForm.style.display = "none";
-        searchResults.style.display = "none";
-        searchBar.style.display = "none";
-    }
-}
-
-
-//Display post creation upon click
-function displayCreatePost(){
-    //No access to the page if the user is not logged in
-    if (sessionStorage.length == 0) {
-        alert("You have to log in to view this page");      
-    } else{
-        createPostSection.style.display = "block";
-        bannerSection.style.display = "none";
-        section.style.display = "none";
-        PostSection.style.display = "none";
-        infoSection.style.display = "none";
-        picSection.style.display = "none";
-        loginForm.style.display = "none";
-        searchBar.style.display = "none";
-        searchResults.style.display = "none";
-    }
-}
-
-//Display full post section
-function displayPosts(){
-    //No access to the page if the user is not logged in
-    if (sessionStorage.length == 0) {
-        alert("You have to log in to view this page");      
-    } else{
-        PostSection.style.display = "block";
-        searchBar.style.display = "block";
-        searchResults.style.display = "block";
-        bannerSection.style.display = "none";
-        section.style.display = "none";
-        infoSection.style.display = "none";
-        createPostSection.style.display = "none"; 
-        picSection.style.display = "none"; 
-        loginForm.style.display = "none";
-    }
-}
-
 //Load all the posts after the page loads
 window.onload = getPosts();
-
 function getPosts() {
-
     //Create request object 
     let request = new XMLHttpRequest();
 
@@ -120,7 +44,6 @@ function getPosts() {
 
             //Call display function with data received from server
             displayAllPosts(postsJson);
-
         } else
             alert("Error communicating with server: " + request.status);
     };
@@ -151,7 +74,6 @@ function displayAllPosts(jsonPost) {
     document.getElementById("full_post_container").innerHTML = htmlStr;
 }
 
-
 function displayUserForm(){
 
     //Generate the form
@@ -176,7 +98,6 @@ function displayUserForm(){
     htmlStr += '  <p id="updateFeedback"></p>';
     htmlStr += '    </div>';
 
-
     //Add all div into the user form info container
     document.getElementById("user-info").innerHTML = htmlStr;
 }
@@ -200,7 +121,6 @@ function updateUserInfo(){
         setTimeout(() => {
             updateFeedback.innerHTML = "";
         }, 5000);
-
     } else{
 
         //Set up XMLHttpRequest
@@ -231,8 +151,6 @@ function updateUserInfo(){
                 setTimeout(() => {
                     updateFeedback.innerHTML = "";
                 }, 5000);
-   
-
             } else {
                 //error
 
@@ -299,7 +217,6 @@ function publishPost(){
         xhttp.setRequestHeader("Content-type", "application/json");
         xhttp.send(JSON.stringify(postObj)); //send object data to the server in JSON format
 
-
         //Upon receiving server's response
         xhttp.onreadystatechange = function() {
 
@@ -309,7 +226,7 @@ function publishPost(){
                 postFeedback.innerHTML = "Your post has been added!";
                 setTimeout(() => {
                     postFeedback.innerHTML = "";
-                    window.location.href = "/"; //bring to the homepage
+                    window.location.replace("/posts");
                 }, 5000);
 
             } else {
@@ -321,12 +238,11 @@ function publishPost(){
                 }, 5000);
 
             }
-
         };
     }
 } //end publishPost()
 
-window.onload= loadSearchResults(); 
+// window.onload= loadSearchResults(); 
 
 //get the posts from user search
 function loadSearchResults(){
@@ -335,10 +251,7 @@ function loadSearchResults(){
 
     if(keyword == ""){
             //if empty do nothing
-    }
-
-    else{
-
+    } else{
         //Set up XMLHttpRequest
         let xhttp = new XMLHttpRequest();
 
@@ -364,10 +277,8 @@ function loadSearchResults(){
                 //Call display function with data received from server
                 displaySearchedPosts(postsJson);
 
-            } else {
-                
+            } else { 
                 //error
-
             }
         };
     }
@@ -395,7 +306,6 @@ function displaySearchedPosts(jsonPost) {
         htmlStr += '</div>';
         htmlStr += '<hr>';
     }
-        
     //Add all div into the search result
     document.getElementById("searchResult").innerHTML = htmlStr;
 

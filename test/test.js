@@ -19,9 +19,9 @@ const mysql = require('mysql');
 const connectionPool = mysql.createPool({
     connectionLimit: 1,
     host: "localhost",
-    user: "user1",
-    password: "pass123",
-    database: "Coursework3",
+    user: "root",
+    password: "",
+    database: "coursework3",
     debug: false
 });
 
@@ -244,8 +244,6 @@ describe('Database', () => {
                                         done(); //End test
                                     }
                                 });
-
-
                             }
                         });
 

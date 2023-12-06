@@ -49,16 +49,6 @@ function loginUser() { //login on the client side
                 //save username in session storage
                 sessionStorage.loggedInUsername = usrnm;
 
-                //display and hide sections
-                document.getElementById("public_nav").style.display = "block";//public nav bar
-                document.getElementById("searchContainer").style.display = "block";; //search bar
-                document.getElementById("searchResult").style.display = "block";; //search results
-                document.getElementById("login-container").style.display = "none"; //login form
-                document.getElementById("banner").style.display = "none";//Banner   
-                document.getElementById("section_two").style.display = "none";//recommendations and rules section 
-                document.getElementById("full_post_container").style.display = "block"; //posts
-                document.getElementById("profile-pic-section").style.display = "none"; //profile picture section
-
                 setTimeout(() => {
                     alert('Login succesful'); //notify user after 0.5s
                 }, 500);
@@ -66,12 +56,10 @@ function loginUser() { //login on the client side
                 //Hide visibility of login and register links
                 document.getElementById("loginLink").style.visibility="hidden";
                 document.getElementById("registerLink").style.visibility="hidden";   
-
+                window.location.replace("/posts");
             } else {
-                
                 //Display error message for invalid credentials
                 document.getElementById('loginFeedback').innerHTML = "Invalid Username and/or Password";
-
             }
         };
     }
@@ -84,9 +72,7 @@ function logOut() {
     //No access to the page if the user is not logged in
     if (sessionStorage.length == 0) {
         alert("You have to log in before logging out");      
-    }
-
-    else{
+    } else {
 
         //Clear sessionStorage
         sessionStorage.clear();

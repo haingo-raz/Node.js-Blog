@@ -20,21 +20,13 @@
                 <h1 class="logo"><a href="/">Hang out here</a></h1>
             </div>
 
-            <div class="nav-posts">
-                <a onclick="displayPosts()">Posts</a><span> | </span>
-                <a onclick="displayCreatePost()" id="newPostLink">Create a post</a>
-            </div>
-
             <div class="nav-right">
                 <!--Display username of logged in user-->
-                <a id="profile" onclick="displayProfile()">Profile</a><span> | </span>
                 <a id="loginLink" onclick="displayLogin()">Login</a><span> | </span>
                 <a id="registerLink" onclick="displaySignup()">Register</a><span> | </span>
-                <a onclick="logOut()">Log out</a>
             </div>
         </nav>
     </div>
-
 
     <hr class="nav_line"><!--Separator-->
 
@@ -61,11 +53,10 @@
             <p id="loginFeedback"></p>
 
             <input type="submit" onclick="loginUser()" class="btn login-btn" value="Login">
-            <p>Do not have an account? <a href="">Register</a></p>
+            <p>Do not have an account? <a href="" onclick="displaySignup()">Register</a></p>
         </div>
     </div>
 
-    
 
     <!--Sign up form -->
     <div class="signup-container" id="signup-form"> 
@@ -110,74 +101,6 @@
     </div>
     <!--End of section 2 in the landing page-->
 
-    <!--Container for the search results-->
-    <div id="searchResult" class="searchResult">
-
-    </div>
-
-    <!--Profile picture section-->
-    <div class="profile-pic-section" id="profile-pic-section">
-        <div>
-            <img id="pictureImg" alt="Profile picture" src="/uploadImg"> <!--Profile picture-->
-        </div>    
-        <div class="profile-upload-section"> <!--File upload option-->
-            <h2>Your profile picture</h2>
-            <p>You can only add a profile picture once.</p>
-            <div>
-                <input type="file" id="FilePicInput"/>
-                <button class="btn" onclick="uploadProfilePic()">Add photo</button>
-                <div id="profileResponse"></div>
-            </div>
-        </div>
-    </div>
-    <!--End of profile picture option-->
-
-    <!--User information page with logged in user details-->
-    <div class="user-info" id="user-info">
-        
-    </div>
-    <!--End of user information page-->
-
-    <!--Search bar-->
-    <div class="searchContainer" id="searchContainer">
-        <form>
-            <input type="text" id="searchInput" name="searchInput" placeholder="Seach a keyword or author...">
-            <button type="button" onclick="loadSearchResults()"><i class="fa fa-search"></i></button>
-        </form>
-    </div>
-    <!--Search bar-->
-
-    <!--All posts section-->
-    <div class="full_post_container" id="full_post_container">
-
-        <!--Posts are generated here as they are created-->
-
-    </div>
-    <!--All posts section-->
-
-    <!--Creating a new post-->
-    <div class="new_post" id="new_post">
-        <h2>Create your own post</h2>
-        <form action="/newpost" method="post" id="newPost" enctype="multipart/form-data">
-            <div class="create_post">
-                <!--Title of post-->
-                <label >Add title<span><b>*</b></span></label>
-                <input type="text" name="title_input" id="title_input"/><br>
-                <!--Country-->
-                <label >Add Country<span><b>*</b></span></label>
-                <input type="text" name="country_input" id="country_input"/><br>
-                <!--Content of the post-->
-                <label class="content_label">Add content<span><b>*</b></span></label>
-                <textarea name="content_input" id="content_input"></textarea><br>
-                <button class="btn cancel_btn" onclick="cancelPost()">Cancel</button>
-                <button class="btn post_btn" onclick="publishPost()">Publish</button>
-                <!--Posting feedback-->
-                <p id="postFeedback"></p>
-            </div>      
-        </form>
-    </div>
-    <!--Creating a new post-->
-
     <!--Link to js -->
     <script src="./js/client.js" async></script>
     <script src="./js/login.js" async></script>
@@ -189,7 +112,7 @@
     <footer>
         <h2>Hang out here</h2>
         <p>Explore the world</p>
-        <p>Haingo Razafindranto &#169; 2022</p>
+        <p>haingo-raz &#169; 2022</p>
     </footer>
     
 </body>

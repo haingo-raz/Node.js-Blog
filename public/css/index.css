@@ -34,6 +34,7 @@ nav {
     line-height:50px;
     margin:0px 10px;
     font-size:19px;
+    cursor: pointer;
 }
 
 .nav-posts a:hover, .nav-right a:hover {
@@ -308,6 +309,7 @@ form input[type="button"]:hover{
 }
 
 .full_post_container{
+    min-height: 80vh;
     margin:20px auto;
     width:75%;  
 }
