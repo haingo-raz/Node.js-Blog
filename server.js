@@ -53,15 +53,15 @@ function loadHome(request, response) {
 }
 
 function loadProfile(request, response) {
-	response.sendFile(path.join(__dirname + '/profile.html'));
+	response.sendFile(path.join(__dirname + '/public/profile.html'));
 }
 
 function loadPosts(request, response) {
-	response.sendFile(path.join(__dirname + '/posts.html'));
+	response.sendFile(path.join(__dirname + '/public/posts.html'));
 }
 
 function loadCreatePosts(request, response) {
-	response.sendFile(path.join(__dirname + '/createPost.html'));
+	response.sendFile(path.join(__dirname + '/public/createPost.html'));
 }
 
 

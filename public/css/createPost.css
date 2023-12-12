@@ -1,0 +1,80 @@
+/*Creating a new post*/
+/*container*/
+.new_post{
+    width:70%;
+    min-height: 60vh;
+    margin:20px auto;
+    position:relative;
+    padding-bottom:30px;
+}
+
+.new_post h2{
+    text-align:center;
+    margin:20px 0px;
+}
+
+/*New post container*/
+.create_post{
+    padding:30px 40px;
+    line-height:30px;
+    background:rgb(240, 239, 239);
+    box-shadow:0px 0px 5px 2px rgb(165, 165, 165);
+}
+
+/*text area*/
+.create_post textarea{
+    height:130px;
+    width:500px;
+    margin-left:100px;
+    padding:5px;
+}
+
+.create_post input[type="text"]{
+    height:25px;
+    margin-left:32px;
+    margin-bottom:20px;
+    padding:0px 5px;
+    width:300px;
+}
+
+/*Choose file button*/
+.create_post input[type="file"]{
+    margin-left:95px;
+}
+
+.image_label{
+    position:absolute;
+    top:290px;
+    left:48px;
+}
+
+.create_post span{
+    color:rgb(155, 150, 150);
+}
+
+/*Content label*/
+.content_label{
+    position:absolute;
+    top:185px;
+    left:36px;
+}
+
+/*Country input field*/
+#country_input{
+    margin-left:4px;
+}
+
+/*New post buttons*/
+.post_btn{
+    position:absolute;
+    display:flex;
+    right:20px;
+    bottom:40px;
+}
+
+.cancel_btn{ /*button to cancel post creation*/
+    position:absolute;
+    display:flex;
+    right:130px;
+    bottom:40px;
+}

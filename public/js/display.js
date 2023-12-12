@@ -14,7 +14,7 @@ var searchResults = document.getElementById("searchResult"); //search results
 //show the sign up form
 function displaySignup(){
     signInForm.style.display = "block";
-    loginForm.style.display = "none";o
+    loginForm.style.display = "none";
 }
 
 //show the login form

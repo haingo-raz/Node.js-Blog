@@ -1,0 +1,59 @@
+/*Profile picture*/
+.profile-pic-section{ /*container*/
+    padding:20px;
+    display:flex;
+    width:50%;
+    height:200px;
+    margin:30px auto;
+    position:relative;
+    box-shadow:0px 0px 5px 2px rgb(165, 165, 165);
+    background:rgb(240, 239, 239);
+}
+
+.profile-upload-section{
+    line-height:30px;
+    height:100px;
+    width:400px;
+    position:absolute;
+    left:270px;
+    top:70px;
+}
+
+#pictureImg{
+    width:200px;
+    height:200px;
+    border-radius:50%;
+}
+
+
+/*User information page*/
+.user-info{
+    margin-top:50px;
+    margin-bottom:50px;
+}
+
+.user-info h2{
+    text-align:center;
+}
+
+.info_form{
+    box-shadow:0px 0px 5px 2px rgb(165, 165, 165);
+    line-height:30px;
+    width:50%;
+    margin:20px auto;
+    padding:20px;
+    background:rgb(240, 239, 239);
+}
+
+/*button of the user-info form*/
+.info_form input[type="submit"]{
+    height:32px;
+    width:99%;
+    margin-top:20px;
+}
+
+.info_form input[type="password"], .info_form input[type="email"], .info_form input[type="text"]{
+    height:25px;
+    width:100%;
+    padding:5px;
+}
