@@ -63,28 +63,21 @@ function loginUser() { //login on the client side
             }
         };
     }
-} //end loginUser()
+}
 
 
 //logout function
 function logOut() {
+    //Clear sessionStorage
+    sessionStorage.clear();
 
-    //No access to the page if the user is not logged in
-    if (sessionStorage.length == 0) {
-        alert("You have to log in before logging out");      
-    } else {
+    alert('Log out successful');
+    window.location.href = "/";
 
-        //Clear sessionStorage
-        sessionStorage.clear();
+    //Set up XMLHttpRequest
+    let xhttp = new XMLHttpRequest();
 
-        alert('Log out successful');
-        window.location.href = "/";
-
-        //Set up XMLHttpRequest
-        let xhttp = new XMLHttpRequest();
-
-        xhttp.open("GET", "/logout", true); //'/auth' from node.js
-        xhttp.setRequestHeader("Content-type", "application/json");
-    }
-} //end logOut()
+    xhttp.open("GET", "/logout", true); //'/auth' from node.js
+    xhttp.setRequestHeader("Content-type", "application/json");
+}
 

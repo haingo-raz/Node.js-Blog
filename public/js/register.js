@@ -49,4 +49,4 @@ function registerUser(){
             }
         };
     }
-} //end registerUser()
+}

@@ -1,15 +1,6 @@
 //Access all the sections
-var publicnav = document.getElementById("public_nav");//public navigation bar  
-var bannerSection = document.getElementById("banner");//Banner  
-var infoSection = document.getElementById("user-info");//user information   
-var picSection = document.getElementById("profile-pic-section");//profile picture section
-var section = document.getElementById("section_two");//recommendations and rules section 
-var createPostSection = document.getElementById("new_post"); //create post
-var PostSection = document.getElementById("full_post_container");  //posts section
 var loginForm =  document.getElementById("login-container"); //login form
 var signInForm = document.getElementById("signup-form"); //sign up form
-var searchBar = document.getElementById("searchContainer"); //search bar
-var searchResults = document.getElementById("searchResult"); //search results
 
 //show the sign up form
 function displaySignup(){
@@ -157,7 +148,7 @@ function updateUserInfo(){
             }
         };
     }
-} // end updateUserInfo()
+}
 
 //call function to display user form
 displayUserForm();
@@ -240,9 +231,7 @@ function publishPost(){
             }
         };
     }
-} //end publishPost()
-
-// window.onload= loadSearchResults(); 
+}
 
 //get the posts from user search
 function loadSearchResults(){
@@ -282,7 +271,7 @@ function loadSearchResults(){
             }
         };
     }
-} //end loadSearchResults()
+}
 
 //Display the posts that correspond to the user search
 function displaySearchedPosts(jsonPost) {
@@ -309,4 +298,4 @@ function displaySearchedPosts(jsonPost) {
     //Add all div into the search result
     document.getElementById("searchResult").innerHTML = htmlStr;
 
-}//end displaySearchedPosts()
+}
