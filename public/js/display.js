@@ -1,17 +1,17 @@
 //Access all the sections
 var loginForm =  document.getElementById("login-container"); //login form
-var signInForm = document.getElementById("signup-form"); //sign up form
+var SignUpForm = document.getElementById("signup-form"); //sign up form
 
 //show the sign up form
 function displaySignup(){
-    signInForm.style.display = "block";
+    SignUpForm.style.display = "block";
     loginForm.style.display = "none";
 }
 
 //show the login form
 function displayLogin(){
     loginForm.style.display = "block";
-    signInForm.style.display = "none";
+    SignUpForm.style.display = "none";
 }
 
 //Load all the posts after the page loads
@@ -49,11 +49,18 @@ function displayAllPosts(jsonPost) {
 
     htmlStr = "";
 
-    //Loop through all posts
+    //Loop through the element of the post array
     for (let i = 0; i < postArray.length; i++) {
 
+        let date = new Date(postArray[i].date);
+        let formattedDate = date.toLocaleDateString('en-US', {
+            year: 'numeric',
+            month: '2-digit',
+            day: '2-digit'
+        });
+
         htmlStr += '<div class="full_post">';     
-        htmlStr += '<p class="post_date_time">' + postArray[i].date + ' and ' + postArray[i].time + '</p>';
+        htmlStr += '<p class="post_date_time"> Posted on: ' + formattedDate  + ' at ' + postArray[i].time + '</p>';
         htmlStr += '<hr>';
         htmlStr += '<p><i class="fa fa-user-circle"></i> ' + postArray[i].author + '</p>';  
         htmlStr += '<h3>' + postArray[i].title + ', ' + postArray[i].country + '</h3>';      
@@ -70,7 +77,7 @@ function displayUserForm(){
     //Generate the form
     htmlStr = "";
 
-    htmlStr += '<h2>Edit email and/or password</h2>';
+    htmlStr += '<h2>View or update your profile details</h2>';
     htmlStr += '   <div class="info_form">';
     htmlStr += '       <div>';
     htmlStr += '           <label>Username</label>';
