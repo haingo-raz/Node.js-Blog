@@ -150,6 +150,19 @@ async function getSearchResults(userSearch, response) {
 	}
 }
 
+function deletePost(postId, response) {
+    let sql = "DELETE FROM posts WHERE id = " + postId;
+
+    connectionPool.query(sql, (err, result) => {
+        if (err) {
+            console.error("Error executing query: " + JSON.stringify(err));
+            response.send("error");
+        } else {
+            response.send("success");
+        }
+    });
+}
+
 //Export the functions
 module.exports.loginUser = loginUser;
 module.exports.registerUser = registerUser;
@@ -157,3 +170,4 @@ module.exports.updateUserInfo = updateUserInfo;
 module.exports.savePostDetails = savePostDetails;
 module.exports.loadAllPosts = loadAllPosts;
 module.exports.getSearchResults = getSearchResults;
+module.exports.deletePost = deletePost;

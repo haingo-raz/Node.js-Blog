@@ -46,6 +46,7 @@ app.post('/updateuser', updateUser); //update a user information
 app.post('/uploadProfilePic', uploadProfilePic); //update a user information
 app.post('/newpost', savePost); //Add a new post
 app.post('/search', searchPost); //Handle searching
+app.delete('/delete/:id', deletePost); // Delete a post
 
 //Render the index page
 function loadHome(request, response) {
@@ -168,6 +169,19 @@ function uploadProfilePic(request, response){ //upload file for the profile pict
 			res.sendFile(path.join(__dirname, "./uploads/"+myFile.name));
 		});
   });
+}
+
+// Function to delete a post
+function deletePost(request, response) {
+    const { id } = request.params;
+    console.log("Post ID received: " + id);
+
+    if (!id) {
+        response.status(400).json({ error: 'Post ID is required' });
+        return;
+    }
+
+    db.deletePost(id, response);
 }
 
 //Export server for testing

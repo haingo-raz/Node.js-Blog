@@ -65,6 +65,10 @@ function displayAllPosts(jsonPost) {
         htmlStr += '<p><i class="fa fa-user-circle"></i> ' + postArray[i].author + '</p>';  
         htmlStr += '<h3>' + postArray[i].title + ', ' + postArray[i].country + '</h3>';      
         htmlStr += '<p>' + postArray[i].content + '</p>';
+        // Check if the logged in user is the author of the post
+        if (postArray[i].author === sessionStorage.loggedInUsername) {
+            htmlStr += `<div class="btn-container"><button onclick="deletePost(${postArray[i].id})">Delete</button></div>`;
+        }
         htmlStr += '</div>';
     }
     
@@ -305,4 +309,22 @@ function displaySearchedPosts(jsonPost) {
     //Add all div into the search result
     document.getElementById("searchResult").innerHTML = htmlStr;
 
+}
+
+function deletePost(postId) {
+    
+        //Set up XMLHttpRequest
+        let xhttp = new XMLHttpRequest();
+        xhttp.open("DELETE", `/delete/${postId}`, true);
+    
+        xhttp.onreadystatechange = function () {
+            if (this.readyState === 4 && this.status == 200) { 
+                alert("Post deleted successfully!")
+                location.reload();
+            } else {
+                console.error('Error:', xhttp.responseText);
+            }
+        };
+    
+        xhttp.send(); // Send the request
 }
