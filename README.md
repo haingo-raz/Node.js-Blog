@@ -5,26 +5,26 @@
 - [UI](#ui)
 
 # About <a name="about"></a>
-A blog developed with Node.js whereby users can register, login, create a post and update their details.
+A blog created with Node.js where users can register, login, create or delete a post, and update their details.
 
 # Technology <a name="technology"></a>
 - HTML/CSS
 - Vanilla JS
-- NodeJS ( Express ) 
+- Node.js/Express
 - MySQL
 
 # How to run it on your computer? <a name="run"></a>
 
-## Prequequisites 
+## Prerequisites 
 - Install XAMPP or a similar tool to be able to run MySQL.
-- Install HeidiSQL, a graphical interface to manage MySQL databases or a similar tool.
+- Install HeidiSQL, a graphical interface to manage MySQL databases or a similar tool (Optional).
 - Install Node.js, which includes npm.
 
 ## Setting up the database 
 - Open XAMPP and start the MySQL module.
-- Open HeidiSQL and connect to the MySQL server by entering your chosen host, username, and password. In this project the default username 'host' is used and the password is empty.
+- Open HeidiSQL or a similar tool and connect to the MySQL server by entering your chosen host, username, and password. In this project, the default username 'host' is used and the password is empty.
 - Create a new database. I named mine "Coursework3" in this project.
-- Browse to the project folder and go to database_dump folder, and import posts.sql and users.sql in the created database to populate the database with dummy data.
+- Browse to the project folder and go to the database_dump folder, and import posts.sql and users.sql into the created database to populate the database with dummy data.
 
 ## Run the server 
 - Open a terminal or command prompt and navigate to the project folder.
@@ -47,8 +47,7 @@ A blog developed with Node.js whereby users can register, login, create a post a
 
 # Future work
 - Allow users to add a profile picture.
-- Allow users to edit their pasts posts.
-- Allow users to delete their pasts posts.
-- Allow users to upvote and downvote a post recommendation.
+- Allow users to edit their past posts.
+- Allow users to upvote and downvote a post.
 - Allow users to direct message another user.
-- Allow users to update their email or password, upong providing their current password.
+- Allow users to update their email or password upon providing their current password.

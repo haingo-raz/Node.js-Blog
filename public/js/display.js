@@ -14,6 +14,12 @@ function displayLogin(){
     SignUpForm.style.display = "none";
 }
 
+function displayLoggedInUser() {
+    let loggedInUser = document.getElementById("profile");
+    loggedInUser.innerHTML = sessionStorage.loggedInUsername;
+}
+window.onload = displayLoggedInUser();
+
 //Load all the posts after the page loads
 window.onload = getPosts();
 function getPosts() {
